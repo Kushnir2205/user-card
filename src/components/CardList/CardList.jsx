@@ -8,8 +8,8 @@ import styles from "./CardList.module.css";
 const CardList = () => {
   const [visibleCards, setVisibleCards] = useState(3);
   const dispatch = useDispatch();
-  const userSelect = useSelector(selectUsers);
-  const cards = userSelect;
+  const cards = useSelector(selectUsers);
+  // const cards = userSelect;
 
   const showMore = () => {
     setVisibleCards(visibleCards + 3);
@@ -21,6 +21,7 @@ const CardList = () => {
 
   return (
     <div className={styles.cardListWrapper}>
+      {JSON.stringify(cards)}
       <ul className={styles.cardList}>
         {cards
           .filter((card, idx) => idx < visibleCards)
@@ -29,7 +30,9 @@ const CardList = () => {
               key={user.id}
               tweets={user.tweets}
               followers={user.followers}
+              isFollowed={user.isFollowed}
               avatar={user.avatar}
+              id={user.id}
             />
           ))}
       </ul>

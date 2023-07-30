@@ -8,3 +8,8 @@ export const getUsers = async () => {
   const { data } = await apiUsers.get("/users");
   return data;
 };
+
+export const editUsers = async (id, users) => {
+  const { data } = await apiUsers.put(`/users/${id}`, users);
+  return data;
+};

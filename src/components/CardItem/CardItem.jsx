@@ -1,18 +1,23 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
 import styles from "./CardItem.module.css";
 import picture from "../../assets/picture2 1.png";
 import projectLogo from "../../assets/porjectLogo.svg";
+import { useDispatch } from "react-redux";
+import { editUsersThunk, getUsersThunk } from "../../redux/thunsks";
 
-const CardItem = ({ tweets, followers, avatar }) => {
-  const [quantityFollowers, setQuantityFollowers] = useState(followers);
-  const [isFollowed, setIsFollowed] = useState(false);
+const CardItem = ({ tweets, followers, avatar, id, isFollowed }) => {
+  const dispatch = useDispatch();
 
   const handleFollow = () => {
-    setIsFollowed(!isFollowed);
-    setQuantityFollowers(
-      isFollowed ? quantityFollowers - 1 : quantityFollowers + 1
-    );
+    dispatch(
+      editUsersThunk({
+        id,
+        followers: isFollowed ? followers - 1 : followers + 1,
+        isFollowed: !isFollowed,
+      })
+    ).then(() => {
+      dispatch(getUsersThunk());
+    });
   };
 
   return (
@@ -24,7 +29,7 @@ const CardItem = ({ tweets, followers, avatar }) => {
           <img className={styles.imageAvatar} src={avatar} alt={avatar} />
         </div>
         <span className={styles.tweets}>{tweets} TWEETS</span>
-        <span className={styles.followers}>{quantityFollowers} FOLLOWERS</span>
+        <span className={styles.followers}>{followers} FOLLOWERS</span>
         <button
           className={`${styles.followButton} ${
             isFollowed ? styles.following : styles.followButton
@@ -42,33 +47,9 @@ const CardItem = ({ tweets, followers, avatar }) => {
 export default CardItem;
 
 CardItem.propTypes = {
-  user: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   tweets: PropTypes.number.isRequired,
   followers: PropTypes.number.isRequired,
   avatar: PropTypes.string,
+  isFollowed: PropTypes.bool.isRequired,
 };
-
-// const [count, setCount] = useState(0)
-
-{
-  /* <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */
-}
