@@ -11,7 +11,6 @@ const usersSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getUsersThunk.fulfilled, (state, { payload }) => {
-        console.log(payload);
         state.items = payload;
         state.isLoading = false;
         state.error = null;

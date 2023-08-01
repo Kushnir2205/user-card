@@ -1,0 +1,24 @@
+.selectLabel {
+  display: flex;
+  color: #5736a3;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.select {
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  background: #ebd8ff;
+  color: #5736a3;
+}
+
+.select > option {
+  font-weight: 600;
+}

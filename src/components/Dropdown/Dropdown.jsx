@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-
-const Dropdown = ({ filter, onchange }) => {
+import styles from "./Dropdown.module.css";
+const Dropdown = ({ value, onchange }) => {
   return (
-    <label>
-      <select value={filter} onChange={onchange}>
+    <label className={styles.selectLabel}>
+      <select value={value} onChange={onchange} className={styles.select}>
         <option value="all">Show all</option>
         <option value="follow">Follow</option>
         <option value="following">Following</option>
@@ -15,6 +15,6 @@ const Dropdown = ({ filter, onchange }) => {
 export default Dropdown;
 
 Dropdown.propTypes = {
-  filter: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
   onchange: PropTypes.func.isRequired,
 };

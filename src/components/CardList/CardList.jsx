@@ -14,7 +14,6 @@ const CardList = () => {
 
   const onChangeFilter = (value) => {
     setMaxCards(3);
-    console.log(value);
     setFilter(value);
   };
 
@@ -35,7 +34,6 @@ const CardList = () => {
       <ul className={styles.cardList}>
         {cards
           .filter((card) => {
-            console.log(card);
             if (filter === "follow") {
               return !card.isFollowed;
             } else if (filter === "following") {
