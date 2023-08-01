@@ -6,13 +6,12 @@ import { getUsersThunk } from "../../redux/thunsks";
 import styles from "./CardList.module.css";
 
 const CardList = () => {
-  const [visibleCards, setVisibleCards] = useState(3);
+  const [maxCards, setMaxCards] = useState(3);
   const dispatch = useDispatch();
   const cards = useSelector(selectUsers);
-  // const cards = userSelect;
 
   const showMore = () => {
-    setVisibleCards(visibleCards + 3);
+    setMaxCards(maxCards + 3);
   };
 
   useEffect(() => {
@@ -21,10 +20,9 @@ const CardList = () => {
 
   return (
     <div className={styles.cardListWrapper}>
-      {JSON.stringify(cards)}
       <ul className={styles.cardList}>
         {cards
-          .filter((card, idx) => idx < visibleCards)
+          .filter((card, idx) => idx < maxCards)
           .map((user) => (
             <CardItem
               key={user.id}
@@ -36,7 +34,7 @@ const CardList = () => {
             />
           ))}
       </ul>
-      {visibleCards < cards.length && (
+      {maxCards < cards.length && (
         <button className={styles.loadMore} onClick={showMore} type="button">
           Load More
         </button>

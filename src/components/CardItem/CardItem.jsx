@@ -19,7 +19,6 @@ const CardItem = ({ tweets, followers, avatar, id, isFollowed }) => {
       dispatch(getUsersThunk());
     });
   };
-
   return (
     <>
       <li className={styles.cardItem}>

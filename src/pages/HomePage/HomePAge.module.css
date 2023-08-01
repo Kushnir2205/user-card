@@ -1,0 +1,36 @@
+.title {
+  margin-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: wheat;
+  font-family: Montserrat;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.toTweet {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid transparent;
+  background-color: #5736a3;
+  font-size: 20px;
+  color: wheat;
+  border-radius: 8px;
+  width: 150px;
+  height: 60px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: -2.5776965618133545px 6.873857021331787px 20.621572494506836px 0px
+    rgba(0, 0, 0, 0.23);
+}
+
+.toTweet:hover {
+  transform: scale(1.1);
+}
+/* .container{
+  background-image: url('/src/assets/picture2\ 1.png');
+  background-size:cover ;
+} */

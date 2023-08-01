@@ -1,13 +1,18 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import CardList from "./components/CardList/CardList";
+import Layout from "./components/Layout/Layout";
+import HomePage from "./pages/homePage/homePage";
+import TweetsPage from "./pages/tweetsPage/tweetsPage";
 
 function App() {
   return (
     <>
-      <CardList />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/tweet" element={<TweetsPage />} />
+        </Route>
+      </Routes>
     </>
   );
 }
