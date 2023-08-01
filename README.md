@@ -1,8 +1,25 @@
-# React + Vite
+# Description
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project aims to implement an interactive user card with the ability to follow the user. Executed according to the provided layout, this project features a follow function that tracks the number of followers and changes the state of the button.
 
-Currently, two official plugins are available:
+## Technical task
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Create a user card according to the layout.
+- Implement an interactive Follow button, which changes to Following upon click, changes color and increases the number of followers by one.
+- The state of the button and the number of followers should be preserved between browser sessions.
+- Upon a second click, the button and the number of followers should return to their original state.
+
+## Dependencies
+
+- "reduxjs/toolkit"
+- "axios"
+- "normalize.css"
+- "prop-types"
+- "react"
+- "react-dom"
+-  react-redux"
+- "react-router-dom"
+- "redux-persist"
+
+## Work with mockapi.io
+To create a personal backend, the mockapi.io service is used for development.
