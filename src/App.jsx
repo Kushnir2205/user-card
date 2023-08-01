@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-
 import Layout from "./components/Layout/Layout";
 import HomePage from "./pages/HomePage/HomePage";
 import TweetsPage from "./pages/TweetsPage/TweetsPage";
