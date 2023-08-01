@@ -11,6 +11,9 @@ ul {
 a {
   text-decoration: inherit;
 }
+.active {
+  color: red;
+}
 
 body {
   background-color: rgba(137, 43, 226, 0.777);

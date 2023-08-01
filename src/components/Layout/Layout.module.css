@@ -1,5 +1,5 @@
 .header {
-background-color: rgba(79, 2, 151, 0.888);
+  background-color: rgba(79, 2, 151, 0.888);
 }
 
 .navigation {
@@ -37,4 +37,7 @@ background-color: rgba(79, 2, 151, 0.888);
 }
 .navLink:hover {
   color: #5cd3a8;
+}
+.navLink.active {
+  color: red;
 }
